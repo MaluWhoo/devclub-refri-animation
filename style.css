@@ -1,0 +1,111 @@
+
+.item {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Para ele ficar aonde quiser */
+    top: 0;
+    left: 0;
+    overflow: hidden; /* Esconder o scroll */
+
+    background-color: var(--backgound);
+}
+
+.item.active {
+    display: block;
+}
+
+.title {
+    font-size: 12rem;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+
+    /* Posicionando o item no centro da tela */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Corrigindo para ele de fato ficar centralizado na página */
+}
+
+.item .fruit {
+    width: 90%;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+
+.item .soda {
+    z-index: 2;
+    width: 600px;
+    position: absolute;
+
+    /* Posicionando o item no centro da tela */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#prev, #next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50);
+    width: 50px;
+    height: 50px;
+    background-color: #eee9;
+    border: 1px solid #eee9;
+    color: #eee;
+    font-size: x-large;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 4;
+    border-radius: 50%;
+}
+
+#prev {
+    left: 30px;
+}
+
+#next {
+    right: 30px  ;
+}
+
+#next:hover {
+    transition: 0.4s;
+    background-color: rgba(238, 238, 238, 0.705);
+}
+
+#prev:hover {
+    transition: 0.4s;
+    background-color: rgba(238, 238, 238, 0.705);
+}
+
+@keyframes toActive {
+    from {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes sodaActive {
+    from {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+
+.item.item.active img.fruit{
+    animation: toActive 0.6s ease-in-out 1;
+}
+
+.item.item.active .title {
+    animation: toActive 0.4s ease-in-out 1;
+}
+
+.item.item.active .soda {
+    animation: sodaActive 0.7s ease;
+}

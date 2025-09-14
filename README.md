@@ -2,7 +2,7 @@
 
 ## 📸 Preview
 
-![Preview do site]()
+![Preview do site](preview-site.jpeg)
 
 ##  Acesse
 
